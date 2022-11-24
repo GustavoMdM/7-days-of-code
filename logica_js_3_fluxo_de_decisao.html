@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+<body>
+    
+    <script>
+
+        var frontOuBack = prompt("Você deseja seguir para a área de Front-End ou para a área de Back-End? (Responda com o número 1 para Front-End ou 2 para Back-End)");
+
+        if(frontOuBack == 1) {
+
+            var reactOuVue = prompt("Você deseja aprender React ou Vue? (Responda com o número 1 para React ou 2 para Vue)");
+
+        } else if (frontOuBack == 2) {
+
+            var cSharpOuJava = prompt("Você deseja aprender C# ou Java? (Responda com o número 1 para C# ou 2 para Java)");
+
+        } else {
+
+            alert("Você não inseriu uma área válida!");
+        }
+
+        var seguirOuFullStack = prompt("Você deseja seguir se especializando na área escolhida ou seguir se desenvolvendo para se tornar FullStack? (Responda com o número 1 para especializar ou 2 para tornar FullStack)");
+
+        if(seguirOuFullStack == 1) {
+
+            alert("Muito bom! Continue estudando e você terá muito sucesso.")
+
+        } else if(seguirOuFullStack == 2) {
+
+            alert("Ótima escolha! Boa sorte em sua jornada.")
+
+        } else {
+
+            alert("Você não inseriu uma área válida!");
+        }
+
+        while(true) {
+            
+            var tecnologia = prompt("Em qual outra tecnologia você gostaria de se especializar ou de conhecer?");
+
+            alert(`${tecnologia} é realmente uma tecnologia muito legal!`);
+
+            var continuaOuNão = prompt("Tem mais alguma tecnologia que você gostaria de aprender? (Responda com o número 1 para SIM ou 2 para NÃO)")
+
+            if(continuaOuNão == 2) {
+                
+                break;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

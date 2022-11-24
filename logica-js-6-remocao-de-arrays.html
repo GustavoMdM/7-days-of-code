@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Desafio 6</title>
+</head>
+<body>
+	
+	<script>
+		
+		let frutas = [];
+		let laticinios = [];
+		let congelados = [];
+		let doces = [];
+
+		while(true) {
+
+			let adicionaOuNao = prompt("Deseja adicionar uma comida na sua lista de compras? (Responda com o número 1 para SIM ou 2 para NÃO)");
+			let removeOuNao;
+			while (adicionaOuNao != 1 && adicionaOuNao != 2) {  
+				alert(`Operação não reconhecida!`);
+        		adicionaOuNao = prompt("Deseja adicionar uma comida na sua lista de compras? (Responda com o número 1 para SIM ou 2 para NÃO)");
+   			}
+			if(adicionaOuNao == 2 && 
+				(frutas.length > 0 || 
+					laticinios.length > 0 || 
+						congelados.length > 0 || 
+							doces.length > 0)) {
+				removeOuNao = prompt("Deseja remover uma comida da sua lista de compras? (Responda com o número 1 para SIM ou 2 para NÃO)");
+                while (removeOuNao != 1 && removeOuNao != 2) {  
+					alert(`Operação não reconhecida!`);
+					removeOuNao = prompt("Deseja remover uma comida na sua lista de compras? (Responda com o número 1 para SIM ou 2 para NÃO)");
+   			    }
+			} else if(adicionaOuNao == 2) {
+				break;
+			}
+
+			if(removeOuNao == 2) {
+				break;
+			}
+
+			if(adicionaOuNao == 1) {
+				let comida = prompt("Qual comida você deseja inserir?");
+
+				let categoria = prompt("Em qual categoria essa comida se encaixa? (digite o número)\n1 - Frutas\n2 - Laticínios\n3 - Congelados\n4 - Doces");
+
+				if(categoria == 1) {
+					frutas.push(comida);
+				} else if(categoria == 2) {
+					laticinios.push(comida);
+				} else if(categoria == 3) {
+					congelados.push(comida);
+				} else if(categoria == 4) {
+					doces.push(comida);
+				} else {
+					alert("Você não inseriu uma categoria válida.");
+				}
+			}
+
+			if(removeOuNao == 1) {
+				let comida = prompt(`Qual delas você deseja remover? \n    Frutas: ${frutas} \n    Laticínios: ${laticinios} \n    Congelados: ${congelados} \n    Doces: ${doces}`);
+
+				if(frutas.includes(comida)) {
+					frutas.splice(frutas.indexOf(comida), 1)
+				} else if(laticinios.includes(comida)) {
+					laticinios.splice(laticinios.indexOf(comida), 1)
+				} else if(congelados.includes(comida)) {
+					congelados.splice(congelados.indexOf(comida), 1)
+				} else if(doces.includes(comida)) {
+					doces.splice(doces.indexOf(comida), 1)
+				} else {
+					alert(`${comida} não foi encontrado(a) na lista.`)
+				}
+
+				alert(`Lista de compras: \n    Frutas: ${frutas} \n    Laticínios: ${laticinios} \n    Congelados: ${congelados} \n    Doces: ${doces}`);
+			}
+		}
+
+			
+
+		alert(`Lista de compras: \n    Frutas: ${frutas} \n    Laticínios: ${laticinios} \n    Congelados: ${congelados} \n    Doces: ${doces}`);
+		
+	</script>
+
+</body>
+</html>

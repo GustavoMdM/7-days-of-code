@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Desafio 5</title>
+</head>
+<body>
+	
+	<script>
+		
+		let frutas = [];
+		let laticinios = [];
+		let congelados = [];
+		let doces = [];
+
+		while(true) {
+
+			let adicionaOuNao = prompt("Deseja adicionar uma comida na sua lista de compras? (Responda com o número 1 para SIM ou 2 para NÃO)");
+			while (adicionaOuNao != 1 && adicionaOuNao != 2) {  
+				alert(`Operação não reconhecida!`);
+        		adicionaOuNao = prompt("Deseja adicionar uma comida na sua lista de compras? (Responda com o número 1 para SIM ou 2 para NÃO)");
+   			 }
+			if(adicionaOuNao == 2) {
+				break;
+			}
+
+			let comida = prompt("Qual comida você deseja inserir?");
+
+			let categoria = prompt("Em qual categoria essa comida se encaixa? (digite o número)\n1 - Frutas\n2 - Laticínios\n3 - Congelados\n4 - Doces");
+
+			if(categoria == 1) {
+				frutas.push(comida);
+			} else if(categoria == 2) {
+				laticinios.push(comida);
+			} else if(categoria == 3) {
+				congelados.push(comida);
+			} else if(categoria == 4) {
+				doces.push(comida);
+			} else {
+				alert("Você não inseriu uma categoria válida.");
+			}
+		}
+
+		alert(`Lista de compras: \n    Frutas: ${frutas} \n    Laticínios: ${laticinios} \n    Congelados: ${congelados} \n    Doces: ${doces}`);
+		
+	</script>
+
+</body>
+</html>

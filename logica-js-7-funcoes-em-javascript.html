@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Desafio 7</title>
+</head>
+<body>
+	
+	<script>
+
+        function mostraResultado(numeroX, sinalOperacao, numeroY, resultado) {
+            alert(`O resultado de ${numeroX} ${sinalOperacao} ${numeroY} é ${resultado}.`);
+        }
+
+        function soma(numeroX, numeroY) {
+            let resultado = parseFloat(numeroX) + parseFloat(numeroY);
+            mostraResultado(numeroX, "+", numeroY, resultado);
+        }
+
+        function subtrai(numeroX, numeroY) {
+            let resultado = parseFloat(numeroX) - parseFloat(numeroY);
+            mostraResultado(numeroX, "-", numeroY, resultado);
+        }
+
+        function multiplica(numeroX, numeroY) {
+            let resultado = parseFloat(numeroX) * parseFloat(numeroY);
+            mostraResultado(numeroX, "x", numeroY, resultado);
+        }
+
+        function divide(numeroX, numeroY) {
+            if(numeroY == 0){
+                alert("Não é possível realizar divisões por 0.");
+            } else {
+                let resultado = parseFloat(numeroX) / parseFloat(numeroY);
+                mostraResultado(numeroX, "/", numeroY, resultado);
+            }
+        }
+
+        let primeiroNumero;
+        let segundoNumero;
+		
+		while(true) {
+            let operacao = prompt("Insira o número da operação desejada: \n 1 - Soma \n 2 - Subtração \n 3 - Multiplicação \n 4 - Divisão \n 5 - Sair");
+
+            if(operacao == 5) {
+                alert("Até a próxima.");
+                break;
+            } else if(operacao == 1 || 
+                        operacao == 2 || 
+                         operacao == 3 || 
+                            operacao == 4) {
+                primeiroNumero = prompt("Insira o primeiro número: ");
+                segundoNumero = prompt("Insira o segundo número: ");
+            }
+
+            switch (operacao) {
+                case "1":
+                    soma(primeiroNumero, segundoNumero);
+                    break;
+                case "2":
+                    subtrai(primeiroNumero, segundoNumero);
+                    break;
+                case "3":
+                    multiplica(primeiroNumero, segundoNumero);
+                    break;
+                case "4":
+                    divide(primeiroNumero, segundoNumero);
+                    break;
+                default:
+                    alert("Operação inválida.");
+            }
+        }
+		
+	</script>
+
+</body>
+</html>
